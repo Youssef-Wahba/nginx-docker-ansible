@@ -1,0 +1,10 @@
+---
+- name: main playbook
+  gather_facts: false
+  hosts: localhost
+  connection: local
+  become: true
+
+  roles:
+    - docker_setup
+    - nginx_container

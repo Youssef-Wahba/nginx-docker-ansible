@@ -1,0 +1,15 @@
+---
+
+- name: Pull Nginx image
+  docker_image:
+    name: nginx
+    source: pull
+
+- name: Run Nginx container
+  docker_container:
+    name: nginx
+    image: nginx
+    state: started
+    restart_policy: always
+    ports:
+      - "3000:80"
